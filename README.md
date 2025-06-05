@@ -1,29 +1,24 @@
-# README #
+# Verificador de Certificados SSL em Lote
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Este projeto realiza a verificação em lote da validade de certificados SSL de uma lista de domínios informada em um arquivo CSV. Ele gera relatórios em CSV com os domínios válidos, expirados e com erro de verificação.
 
-### What is this repository for? ###
+## Como funciona
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+O script [`main.py`](main.py) lê um arquivo CSV contendo domínios, verifica a validade do certificado SSL de cada domínio e salva os resultados em arquivos separados na pasta `relatorios_ssl/`.
 
-### How do I get set up? ###
+### Entrada
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+O arquivo de entrada deve estar no formato CSV, com as colunas:
 
-### Contribution guidelines ###
+- `id`: identificador único do domínio
+- `dominio`: domínio a ser verificado (pode conter http/https)
 
-* Writing tests
-* Code review
-* Other guidelines
+Exemplo ([data/domains.csv](data/domains.csv)):
 
-### Who do I talk to? ###
+### Saída
 
-* Repo owner or admin
-* Other community or team contact
+Os relatórios são gerados na pasta `relatorios_ssl/`:
+
+- `dominios_validos_<timestamp>.csv`: domínios com certificado válido
+- `dominios_expirados_<timestamp>.csv`: domínios com certificado expirado
+- `dominios_erro_<timestamp>.csv`: domínios que não puderam ser verificados
