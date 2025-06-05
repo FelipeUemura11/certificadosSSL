@@ -1,0 +1,4 @@
+id,dominio_original_csv,dominio_verificado,common_name,data_expiracao,dias_restantes
+63657f390c26e31ff05c300b,https://youtube.com.br/,youtube.com.br,misc-sni.youtube.com,04/08/2025 08:43:42 UTC,59
+64f0a8806b3952be493de3bc,www.google.com.br,www.google.com.br,*.google,04/08/2025 08:45:08 UTC,59
+65f0a8806b3952be493de3bd,facebook.com.br,facebook.com.br,facebook,13/06/2025 23:59:59 UTC,8
